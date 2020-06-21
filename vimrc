@@ -14,7 +14,7 @@ set hlsearch
 set nobackup
 
 "color column
-set colorcolumn=79
+set colorcolumn=81
 
 "colorize color column
 highlight ColorColumn ctermbg=darkgrey
@@ -36,3 +36,6 @@ let &path.="/usr/include/AL"
 
 "disable autosave
 set noautowrite
+
+"set shift width as tab
+set shiftwidth=4

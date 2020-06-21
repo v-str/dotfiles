@@ -1,4 +1,6 @@
+/***********************************************************************
 Record macros
+***********************************************************************/
 
 q{a-z}
 actions
@@ -6,4 +8,95 @@ q
 
 @{a-z} or digit@{a-z}
 
+#include <stdio.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+
+/***********************************************************************
+Line shifting
+***********************************************************************/
+
+shift+< or shift+> move line by tab left or right
+
+A B C D E F G
+
+/***********************************************************************
+Joining lines
+***********************************************************************/
+
+visual mode + J
+
+each word of this text was on separate line
+
+/***********************************************************************
+Changing case
+***********************************************************************/
+
+gUw
+
+EACH word of this text was on separate line
+
+guw
+each word of this text was on separate line
+
+g~~
+EACH WORD OF THIS TEXT WAS ON SEPARATE LINE
+
+/***********************************************************************
+Sort
+***********************************************************************/
+
+line 521
+line 12
+line 5902
+line 42
+line 21
+line 482
+
+:sort
+
+line 12
+line 21
+line 42
+line 482
+line 521
+line 5902
+
+/***********************************************************************
+Paste text from command
+***********************************************************************/
+
+:read !{programm}
+
+:read !ls -lah /
+
+total 2,1G
+drwxr-xr-x  25 root   root   4,0K июн 10 06:17 .
+drwxr-xr-x  25 root   root   4,0K июн 10 06:17 ..
+drwxr-xr-x   2 root   root   4,0K июн  6 16:19 bin
+drwxr-xr-x   4 root   root   4,0K июн 13 00:04 boot
+drwx------   2 root   root   4,0K апр 22 03:02 .cache
+drwxrwxr-x   2 root   root   4,0K мар 10 02:24 cdrom
+drwxr-xr-x  20 root   root   4,5K июн 18 19:00 dev
+drwxr-xr-x 144 root   root    12K июн 17 23:37 etc
+drwxr-xr-x   4 user   user   4,0K июн 11 22:06 home
+drwxr-xr-x  24 root   root   4,0K апр 20 18:16 lib
+drwxr-xr-x   2 root   root   4,0K фев  3 21:22 lib64
+drwx------   2 root   root    16K мар 10 02:20 lost+found
+drwxr-xr-x   4 root   root   4,0K июн 11 22:07 media
+drwxr-xr-x   4 root   root   4,0K июн 11 15:42 mnt
+drwxr-xr-x   3 root   root   4,0K апр 22 16:08 opt
+dr-xr-xr-x 393 root   root      0 июн 12 10:10 proc
+drwx------   6 root   root   4,0K июн 20 11:21 root
+drwxr-xr-x  36 root   root   1,2K июн 21 12:47 run
+drwxr-xr-x   2 root   root    12K июн 13 00:03 sbin
+drwxr-xr-x  15 root   root   4,0K апр 26 03:53 snap
+drwxr-xr-x   2 root   root   4,0K фев  3 21:22 srv
+-rw-------   1 root   root   2,0G мар 10 02:21 swapfile
+dr-xr-xr-x  13 root   root      0 июн 12 10:10 sys
+drwxrwxrwt  26 root   root    12K июн 21 13:35 tmp
+drwxr-xr-x  12 root   root   4,0K мар 10 23:07 usr
+drwxr-xr-x  14 root   root   4,0K фев  3 21:30 var
 
