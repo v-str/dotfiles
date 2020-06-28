@@ -123,3 +123,8 @@ ctrl+v - visual mode
 shift+i - write your symbols ( // )
 esc esc
 
+/***********************************************************************
+Autoalight text by "textwidth" marker
+***********************************************************************/
+
+gg + gqG
