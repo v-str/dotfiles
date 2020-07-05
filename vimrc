@@ -12,10 +12,16 @@ inoremap {<CR> {<CR>}<Esc>ko<tab>
 inoremap [<CR> [<CR>]<Esc>
 inoremap (<CR> (<CR>)<Esc>
 
+" map for #include <*.h>
+map <F2> i#include <*.h><Esc><BS>hhxi
+
+
 syntax on "enable syntax highlight
-let &path.="/usr/include/AL" "set path
 colorscheme wombat256grf "set nice theme
 
+"let &path.="/usr/include/AL:/usr/include/linux/AL" "set path
+set path+=/usr/include/*
+set path+=/usr/include/linux/*
 set autoindent "auto indendation
 set textwidth=80 "text width
 set noswapfile "disable swap file
