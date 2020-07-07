@@ -15,7 +15,6 @@ inoremap (<CR> (<CR>)<Esc>
 " map for #include <*.h>
 map <F2> i#include <*.h><Esc><BS>hhxi
 
-
 syntax on "enable syntax highlight
 colorscheme wombat256grf "set nice theme
 
@@ -30,8 +29,10 @@ set shiftwidth=4 "set shift width as tab
 set ts=4 "set tab stop=4
 set nu "show line numbers
 set hlsearch "highlight search
+set incsearch "search while typing
 set nobackup "disable backup
 set colorcolumn=81 "color column
 set ruler "display cursor line and column
 set si "smart intend for C programs
+set nocompatible "forget about Vi
 
