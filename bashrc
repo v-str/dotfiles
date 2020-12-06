@@ -10,7 +10,7 @@ alias ll='ls --color=auto -la'
 
 export PS1="\e[0;36m[\u\e[m@\h \W]\$ "
 #for root 0;31 (RED color name)
-#export PS1="\e[0;36m[\u\e[m@\h \W]\$ "
+export PS1="\e[0;36m[\u\e[m@\h \W]\$ "
 export EDITOR=/bin/vim
 
 # Keyboard layout RUS/ENG
