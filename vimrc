@@ -47,3 +47,15 @@ autocmd VimEnter * NERDTree
 " Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * silent NERDTreeMirror
 
+
+" Python PEP-8 formating
+" install autopep8 on your system, then install plugin from github:
+" https://github.com/tell-k/vim-autopep8 
+
+" press <F8> for autopep :)
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+
+" Disable show diff window
+let g:autopep8_disable_show_diff=1
+" Automatically format every time saving a file.
+let g:autopep8_on_save = 1
