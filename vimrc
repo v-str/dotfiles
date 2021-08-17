@@ -32,3 +32,11 @@ set si "smart intend for C programs
 set nocompatible "forget about Vi
 
 au VimEnter *  NERDTree "NERDTree autostart
+
+"cpp highlight features
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_concepts_highlight = 1
