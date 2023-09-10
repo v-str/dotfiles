@@ -299,6 +299,68 @@ their infancy. Various versions have evolved over the years,
 sometimes by accident, sometimes on purpose (injected humour and the like).
 
 
+
+/***********************************************************************
+  Execute external cmd and write here a result
+ ***********************************************************************/
+
+Just type !!cmd
+
+!!date
+
+Sun Sep 10 10:13:37 PM MSK 2023
+
+!!ls
+
+bashrc
+vim
+vim_cheat_sheet.html
+vim_hot_tips.txt
+vimrc
+
+/***********************************************************************
+  View, Edit file
+ ***********************************************************************/
+
+:e path/to/file  -  open to edit in current buffer
+:view path/to/file - open to view ( readonly mode ) 
+
+
+/***********************************************************************
+  Open multiple files and switching btw them
+ ***********************************************************************/
+
+vim file1 file2
+
+:n - open next ( :wn - write and open next )
+:N - open previous
+
+:first - end 1st in your list of files
+:last - accordingly, last
+
+
+/***********************************************************************
+  Matches - power of search in your arms :)
+ ***********************************************************************/
+
+Using :match you can choose the color and type of highlighting when
+searching something
+
+Press :highlight and remember your favorite color-type, then
+
+type :match YourGroup /searched_text/
+
+When finished, type :match none to set color to default
+
+You can use 3 matches at one time: :match, :2match, :3match
+
+
+/***********************************************************************
+  Split the screen
+ ***********************************************************************/
+
+
+
 /***********************************************************************
   text
  ***********************************************************************/
@@ -318,8 +380,27 @@ sometimes by accident, sometimes on purpose (injected humour and the like).
   text
  ***********************************************************************/
 
+/***********************************************************************
+  text
+ ***********************************************************************/
 
 /***********************************************************************
   text
  ***********************************************************************/
+
+
+/***********************************************************************
+  text
+ ***********************************************************************/
+
+
+/***********************************************************************
+  text
+ ***********************************************************************/
+
+
+/***********************************************************************
+  text
+ ***********************************************************************/
+
 
