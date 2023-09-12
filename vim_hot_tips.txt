@@ -217,6 +217,8 @@ The ~ sym changes char case from up to down and vice versa :)
 
 press 6~
 
+or gUw :)
+
 tRY IT, bAbY!
 
 /***********************************************************************
