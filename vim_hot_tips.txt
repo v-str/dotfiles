@@ -361,20 +361,40 @@ You can use 3 matches at one time: :match, :2match, :3match
   Split the screen
  ***********************************************************************/
 
+ :split (or split file)
+ :vsplit
 
+ CTRL-Wn - split and start new file
 
 /***********************************************************************
-  text
+  Screen resizing
  ***********************************************************************/
 
+ count CTRL-W+/-  increase/decrease height by count ( or :resize +/- N )
+ count CTRL-W>/< - increase/decrease width
 
 /***********************************************************************
-  text
+  Buffers
  ***********************************************************************/
 
+:hide - hide buffer :)
+:buffers - show all available buffers
+
+- inactive
+h hidden
+% current
+# alternate
++ file has been modified
+
+:buffer 1   -   open buffer 1 ( or :buffer filename )
+:sbuffer 1   - open split buffer 1
+:vertical sbuffer 1
+
+:count bnext   -  switch to the next buffer
+:count bprevious
 
 /***********************************************************************
-  text
+  Tabs
  ***********************************************************************/
 
 
