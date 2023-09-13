@@ -1,5 +1,93 @@
+"
+" VUNDLE PART
+"
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" fold/unfold methods,classes
+Plugin 'tmhedberg/SimpylFold'
+
+" python intendation
+Plugin 'vim-scripts/indentpython.vim'
+
+" autocompletion
+Plugin 'Valloric/YouCompleteMe'
+
+" Python syntax check
+Plugin 'vim-syntastic/syntastic'
+
+" PEP8 check
+Plugin 'nvie/vim-flake8'
+
+"NerdTree
+Plugin 'scrooloose/nerdtree'
+
+"Zenburn theme
+Plugin 'jnurmine/Zenburn'
+
+"angt theme
+Plugin 'zacanger/angr.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"
+"				MY PART
+"
+
 "colorize color column
-highlight ColorColumn ctermbg=darkgrey 
+highlight ColorColumn ctermbg=lightgrey
+
+"colortheme
+colorscheme angr
+
 "close brackets and +tab between
 inoremap {<CR> {<CR>}<Esc>ko<tab> 
 inoremap [<CR> [<CR>]<Esc>
@@ -11,32 +99,57 @@ map <F2> i#include <*.h><Esc><BS>hhxi
 syntax enable
 filetype plugin indent on
 
-colorscheme wombat256grf "set nice theme
+autocmd TextChanged,TextChangedI <buffer> silent write "auto save
 
-"let &path.="/usr/include/AL:/usr/include/linux/AL" "set path
-set path+=/usr/include/*
-set path+=/usr/include/linux/*
-set autoindent "auto indendation
-"set textwidth=80 "text width
-set noswapfile "disable swap file
-set noautowrite "disable autosave
-set shiftwidth=4 "set shift width as tab
-set ts=4 "set tab stop=4
-set nu "show line numbers
+set foldmethod=indent "fold method,class bodies
+set foldlevelstart=99
+set foldlevel=99
+
+nnoremap <space> za
+
+au VimEnter *  NERDTree "NERDTree autostart
+
+" remove unnecessary whitespaces
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+au BufNewFile,BufRead *.py
+	\ set autoindent "auto indendation
+	\ set textwidth=79 "text width
+	\ set tabstop=4
+	\ set softtabstop=4
+	\ set shiftwidth=4 "set shift width as tab
+	\ set expandtab
+	\ set fileformat=unix
+	\ set nu "show line numbers
+
+set encoding=utf-8
 set hlsearch "highlight search
 set incsearch "search while typing
 set nobackup "disable backup
 set colorcolumn=81 "color column
 set ruler "display cursor line and column
-set si "smart intend for C programs
 set nocompatible "forget about Vi
 
-au VimEnter *  NERDTree "NERDTree autostart
+"for nested vimrc
+set exrc
+set secure
 
-"cpp highlight features
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_posix_standard = 1
-let g:cpp_experimental_simple_template_highlight = 1
-let g:cpp_concepts_highlight = 1
+"expand NERDTree
+:let g:NERDTreeWinSize=40
+
+" YCM goes away after 1 sec
+:let g:ycm_autoclose_preview_window_after_completion=1
+
+:let python_highlight_all=1
+syntax on
+
+"g + Ctrl  ycm go to definition
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" disable YCM preview
+set completeopt-=preview
+
+
+
+
