@@ -176,6 +176,7 @@ let g:autopep8_aggressive=1
 " add more aggressive options (--aggressive --aggressive)
 let g:autopep8_aggressive=2
 
+let g:autopep8_ignore="E501,W293,E121"
 " let g:autopep8_diff_type='vertical'
 " autoformat on save
 " let g:autopep8_on_save = 1
