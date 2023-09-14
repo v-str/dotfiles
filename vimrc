@@ -38,6 +38,9 @@ Plugin 'jnurmine/Zenburn'
 "angt theme
 Plugin 'zacanger/angr.vim'
 
+"powerline at the bottom of the screen
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -99,7 +102,7 @@ map <F2> i#include <*.h><Esc><BS>hhxi
 syntax enable
 filetype plugin indent on
 
-autocmd TextChanged,TextChangedI <buffer> silent write "auto save
+autocmd TextChanged,TextChangedI <buffer> silent update "auto save
 
 set foldmethod=indent "fold method,class bodies
 set foldlevelstart=99
@@ -121,8 +124,8 @@ au BufNewFile,BufRead *.py
 	\ set shiftwidth=4 "set shift width as tab
 	\ set expandtab
 	\ set fileformat=unix
-	\ set nu "show line numbers
 
+set number
 set encoding=utf-8
 set hlsearch "highlight search
 set incsearch "search while typing
@@ -135,21 +138,48 @@ set nocompatible "forget about Vi
 set exrc
 set secure
 
+" disable YCM preview
+set completeopt-=preview
+
+" syntastic part
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers=['flake8']
+
+:let python_highlight_all=1
+syntax on
+
 "expand NERDTree
 :let g:NERDTreeWinSize=40
 
 " YCM goes away after 1 sec
 :let g:ycm_autoclose_preview_window_after_completion=1
 
-:let python_highlight_all=1
-syntax on
+:let $PYTHONPATH='${V_BUILD_GITHUB}:${V_BUILD_GITHUB}/backend'
 
 "g + Ctrl  ycm go to definition
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" disable YCM preview
-set completeopt-=preview
+"vim-autopep8
+autocmd FileType python noremap <buffer> <F3> :call Autopep8()<CR>
 
+" add aggressive option (--aggressive)
+let g:autopep8_aggressive=1
 
+" add more aggressive options (--aggressive --aggressive)
+let g:autopep8_aggressive=2
 
+" let g:autopep8_diff_type='vertical'
+" autoformat on save
+" let g:autopep8_on_save = 1
+
+" disable show diff
+let g:autopep8_disable_show_diff=1
 
