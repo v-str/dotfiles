@@ -397,17 +397,51 @@ h hidden
   Tabs
  ***********************************************************************/
 
+:tabedit filename - new tab with file
+:tabonly - close all other tabs
+
+N + gt - go to N tab
 
 /***********************************************************************
-  text
+  Visual modes
  ***********************************************************************/
 
-/***********************************************************************
-  text
- ***********************************************************************/
+v - simple visual
+V - visual block
+
+after mode choosing press c to replace selection or C to replace the
+whole line
+
+shift + J - line joining
+
+shift + K - open man page for selection ( for Unix and Linux default ONLY )
+
+I + text + Esc - insert in visual block mode to whole lines
 
 /***********************************************************************
-  text
+  For programming
+ ***********************************************************************/
+
+(Many settings is already done by me in .vimrc file)
+
+press % - jump between brackets
+
+the = command:
+
+1. position on first {
+2. press =%
+3. viola!
+
+void my_func()
+{
+	int a = 10;
+	printf("a = %d\n", a);
+}
+
+you can do it using v mode, select zone and press =
+
+/***********************************************************************
+  text - page 120
  ***********************************************************************/
 
 
