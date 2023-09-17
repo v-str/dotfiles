@@ -8,11 +8,6 @@ q
 
 @{a-z} or digit@{a-z}
 
-#include <stdio.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-
 /***********************************************************************
   Line shifting
  ***********************************************************************/
@@ -20,6 +15,14 @@ q
 shift+< or shift+> move line by tab left or right
 
 A B C D E F G
+
+
+Or use >% <% to shift whole block
+
+	{
+	my block is here
+	wow wow wow
+	}
 
 /***********************************************************************
   Joining lines
@@ -259,6 +262,8 @@ will refine the search
 
 :set noincsearch
 
+also use gD
+
 /***********************************************************************
   Char twidding, it's easy
  ***********************************************************************/
@@ -441,17 +446,39 @@ void my_func()
 you can do it using v mode, select zone and press =
 
 /***********************************************************************
-  text - page 120
+  Folding
  ***********************************************************************/
 
+za
+zo
+
+if condition {
+	 // code
+	 // code
+	 // code
+	 // code
+	 // code
+	 // code
+	 // code
+	 // code
+	 // code
+	 // code
+} else {
+	 echo "yeap:)"
+}
 
 /***********************************************************************
-  text
+  Abbreviations
  ***********************************************************************/
 
+:abbreviate ll LONG LINE
+
+LONG LINE 
+
+:ab - watch your abbreviations
 
 /***********************************************************************
-  text
+  page 147 - mapping
  ***********************************************************************/
 
 
