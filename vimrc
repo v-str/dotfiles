@@ -41,6 +41,13 @@ Plugin 'zacanger/angr.vim'
 "powerline at the bottom of the screen
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
+"one half theme
+Plugin 'sonph/onehalf', {'rtp': 'vim/'} 
+
+"another theme file
+Plugin 'jacoborus/tender.vim'
+Plugin 'junegunn/seoul256.vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -89,15 +96,12 @@ filetype plugin indent on    " required
 highlight ColorColumn ctermbg=lightgrey
 
 "colortheme
-colorscheme angr
+colorscheme tender
 
 "close brackets and +tab between
 inoremap {<CR> {<CR>}<Esc>ko<tab> 
 inoremap [<CR> [<CR>]<Esc>
 inoremap (<CR> (<CR>)<Esc>
-
-" map for #include <*.h>
-map <F2> i#include <*.h><Esc><BS>hhxi
 
 syntax enable
 filetype plugin indent on
@@ -125,11 +129,12 @@ au BufNewFile,BufRead *.py
 	\ set expandtab
 	\ set fileformat=unix
 
+set noswapfile
 set number
 set encoding=utf-8
 set hlsearch "highlight search
 set incsearch "search while typing
-set nobackup "disable backup
+se nobackup "disable backup
 set colorcolumn=81 "color column
 set ruler "display cursor line and column
 set nocompatible "forget about Vi
@@ -158,6 +163,8 @@ syntax on
 
 "expand NERDTree
 :let g:NERDTreeWinSize=40
+"show hidden by default
+let NERDTreeShowHidden=1
 
 " YCM goes away after 1 sec
 :let g:ycm_autoclose_preview_window_after_completion=1
@@ -176,7 +183,7 @@ let g:autopep8_aggressive=1
 " add more aggressive options (--aggressive --aggressive)
 let g:autopep8_aggressive=2
 
-let g:autopep8_ignore="E501,W293,E121"
+let g:autopep8_ignore="E501,W293,E121,E402"
 " let g:autopep8_diff_type='vertical'
 " autoformat on save
 " let g:autopep8_on_save = 1
