@@ -18,3 +18,5 @@ setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
 
 # ranger quit in current directory
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+alias grep='grep --color=always'
