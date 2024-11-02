@@ -20,3 +20,5 @@ export EDITOR=/bin/vim
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 alias grep='grep --color=always'
+
+cd $HOME
