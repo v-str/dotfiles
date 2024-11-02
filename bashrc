@@ -14,7 +14,7 @@ export PS1="\e[0;36m[\u\e[m@\h \W]\$ "
 export EDITOR=/bin/vim
 
 # Keyboard layout RUS/ENG
-setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
+# setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle
 
 # ranger quit in current directory
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
