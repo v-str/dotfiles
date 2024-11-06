@@ -35,9 +35,6 @@ Plugin 'scrooloose/nerdtree'
 "Zenburn theme
 Plugin 'jnurmine/Zenburn'
 
-"angt theme
-Plugin 'zacanger/angr.vim'
-
 "powerline at the bottom of the screen
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -47,6 +44,8 @@ Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 "another theme file
 Plugin 'jacoborus/tender.vim'
 Plugin 'junegunn/seoul256.vim'
+Plugin 'zacanger/angr.vim'
+Plugin 'fcpg/vim-orbital'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -96,7 +95,22 @@ filetype plugin indent on    " required
 highlight ColorColumn ctermbg=lightgrey
 
 "colortheme
-colorscheme tender
+"colorscheme tender
+colorscheme orbital
+
+" Use a line cursor within insert mode and a block cursor everywhere else.
+"
+" Reference chart of values:
+"   Ps = 0  -> blinking block.
+"   Ps = 1  -> blinking block (default).
+"   Ps = 2  -> steady block.
+"   Ps = 3  -> blinking underline.
+"   Ps = 4  -> steady underline.
+"   Ps = 5  -> blinking bar (xterm).
+"   Ps = 6  -> steady bar (xterm).
+
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 "close brackets and +tab between
 inoremap {<CR> {<CR>}<Esc>ko<tab> 
@@ -117,7 +131,12 @@ nnoremap <space> za
 au VimEnter *  NERDTree "NERDTree autostart
 
 " remove unnecessary whitespaces
-highlight BadWhitespace ctermbg=red guibg=darkred
+" highlight BadWhitespace ctermbg=red guibg=darkred
+" highlight ctermbg=lightgreen ctermfg=darkblue
+
+
+
+
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 au BufNewFile,BufRead *.py
@@ -133,11 +152,14 @@ set noswapfile
 set number
 set encoding=utf-8
 set hlsearch "highlight search
+hi Search ctermbg=lightgreen
 set incsearch "search while typing
 se nobackup "disable backup
 set colorcolumn=81 "color column
 set ruler "display cursor line and column
 set nocompatible "forget about Vi
+
+set ts=4 sw=4
 
 "for nested vimrc
 set exrc
