@@ -46,6 +46,7 @@ Plugin 'jacoborus/tender.vim'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'zacanger/angr.vim'
 Plugin 'fcpg/vim-orbital'
+Plugin 'gregsexton/Atom'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -92,11 +93,10 @@ filetype plugin indent on    " required
 "
 
 "colorize color column
-highlight ColorColumn ctermbg=lightgrey
+highlight ColorColumn ctermbg=darkgrey
 
 "colortheme
 "colorscheme tender
-colorscheme orbital
 
 " Use a line cursor within insert mode and a block cursor everywhere else.
 "
@@ -137,7 +137,7 @@ au VimEnter *  NERDTree "NERDTree autostart
 
 
 
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 au BufNewFile,BufRead *.py
 	\ set autoindent "auto indendation
